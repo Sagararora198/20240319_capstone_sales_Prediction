@@ -1,0 +1,540 @@
+@use "utils" as *;
+@use "global" as *;
+
+.home-page {
+  &.root {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+  }
+  .group {
+    display: flex;
+    flex-direction: column;
+    height: 478px;
+    position: absolute;
+    right: -730px;
+    top: -6px;
+    width: 2133px;
+  }
+  .group1 {
+    display: flex;
+    flex-direction: column;
+    height: 478px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 2133px;
+  }
+  .group2 {
+    display: flex;
+    flex-direction: column;
+    height: 478px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 2133px;
+    @include lg {
+      left: -39px;
+    }
+  }
+  .decorator {
+    height: 478px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 2133px;
+    @include lg {
+      left: 243px;
+    }
+  }
+  .hero_title1 {
+    align-items: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    font: 400 50px/1.84 "Abel", Helvetica, Arial, serif;
+    height: 92px;
+    justify-content: center;
+    left: 49px;
+    position: absolute;
+    text-align: center;
+    top: -9.5px;
+    width: 79px;
+    @include lg {
+      left: 18%;
+    }
+    @include md {
+      left: 31.5%;
+    }
+    @include sm {
+      left: 36.5%;
+    }
+    @include xs {
+      left: 41.5%;
+    }
+    @include xxs {
+      left: 48.3%;
+    }
+  }
+  .title {
+    align-items: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    font: 400 30px/3.06 "Abel", Helvetica, Arial, serif;
+    height: 92px;
+    justify-content: center;
+    left: 301px;
+    position: absolute;
+    text-align: center;
+    top: -5px;
+    width: 65px;
+    @include lg {
+      left: 28.11%;
+    }
+    @include md {
+      left: 37.11%;
+    }
+    @include sm {
+      left: 40.11%;
+    }
+    @include xs {
+      left: 44.11%;
+    }
+    @include xxs {
+      left: 50.61%;
+    }
+  }
+  .title1 {
+    align-items: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    font: 400 30px/3.06 "Abel", Helvetica, Arial, serif;
+    height: 92px;
+    justify-content: center;
+    left: 403.5px;
+    position: absolute;
+    text-align: center;
+    top: -5px;
+    width: 66px;
+    @include lg {
+      left: 31.92%;
+    }
+    @include md {
+      left: 41%;
+    }
+    @include sm {
+      left: 44%;
+    }
+    @include xs {
+      left: 48%;
+    }
+    @include xxs {
+      left: 54%;
+    }
+  }
+  .title2 {
+    align-items: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    font: 400 30px/3.06 "Abel", Helvetica, Arial, serif;
+    height: 92px;
+    justify-content: center;
+    left: 1218px;
+    position: absolute;
+    text-align: center;
+    top: -5px;
+    width: 61px;
+    @include xxs {
+      left: 1247px;
+    }
+  }
+  .title3 {
+    align-items: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    font: 400 30px/3.06 "Abel", Helvetica, Arial, serif;
+    height: 92px;
+    justify-content: center;
+    left: 1313px;
+    position: absolute;
+    text-align: center;
+    top: -5px;
+    width: 77px;
+  }
+  .group3 {
+    display: flex;
+    flex-direction: column;
+    margin: 252px 0px 228px 6.81%;
+    position: relative;
+    width: 569px;
+    @include md {
+      margin: 191px 0px 228px 6.81%;
+    }
+    @include xxs {
+      width: 113.54%;
+    }
+  }
+  .image {
+    bottom: -222px;
+    height: 448px;
+    position: absolute;
+    right: -156px;
+    width: 431px;
+    @include lg {
+      bottom: -290px;
+      right: 0px;
+    }
+    @include md {
+      bottom: -111.69%;
+      right: 33%;
+    }
+    @include sm {
+      right: 1%;
+    }
+    @include xs {
+      bottom: -107.69%;
+      right: 14%;
+    }
+    @include xxs {
+      bottom: -152.69%;
+      object-position: 50% center;
+      right: 7%;
+    }
+  }
+  .hero_title {
+    color: rgb(57, 57, 57);
+    display: flex;
+    font: 400 87px/1.1 "Abel", Helvetica, Arial, serif;
+    justify-content: center;
+    letter-spacing: -3.48px;
+    position: relative;
+    text-align: center;
+    @include md {
+      margin: 0% 0px;
+    }
+    @include xs {
+      margin: 0% 13% 0% 0%;
+    }
+    @include xxs {
+      align-items: flex-start;
+      font-size: 63px;
+    }
+  }
+  .box {
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px 12px 12px 12px;
+    display: flex;
+    filter: drop-shadow(0px 4px 11px rgba(0, 0, 0, 0.207));
+    flex-direction: column;
+    height: 307px;
+    position: absolute;
+    right: 88px;
+    top: 384px;
+    width: 365px;
+    @include lg {
+      right: 39px;
+    }
+    @include md {
+      right: 18px;
+      top: 379px;
+    }
+    @include sm {
+      right: 59px;
+      top: 101.61%;
+    }
+  }
+  .content_box {
+    display: flex;
+    flex-direction: column;
+    height: 246px;
+    left: 28px;
+    position: absolute;
+    top: 31px;
+    width: 309px;
+  }
+  .info {
+    bottom: 122px;
+    color: rgb(151, 150, 153);
+    display: flex;
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    height: 18px;
+    justify-content: center;
+    left: 4px;
+    position: absolute;
+    right: 283px;
+    text-align: center;
+    top: 106px;
+    width: 22px;
+  }
+  .line {
+    background-color: rgb(242, 237, 238);
+    bottom: 132px;
+    height: 1px;
+    left: 45px;
+    position: absolute;
+    right: 1px;
+    top: 113px;
+    width: auto;
+  }
+  .info1 {
+    bottom: 170px;
+    color: rgb(151, 150, 153);
+    display: flex;
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    height: 18px;
+    justify-content: center;
+    left: 2.5px;
+    position: absolute;
+    right: 283.5px;
+    text-align: center;
+    top: 58px;
+    width: 23px;
+  }
+  .line1 {
+    background-color: rgb(242, 237, 238);
+    bottom: 180px;
+    height: 1px;
+    left: 44px;
+    position: absolute;
+    right: 2px;
+    top: 65px;
+    width: auto;
+  }
+  .info2 {
+    bottom: 74px;
+    color: rgb(151, 150, 153);
+    display: flex;
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    height: 18px;
+    justify-content: center;
+    left: 6.5px;
+    position: absolute;
+    right: 283.5px;
+    text-align: center;
+    top: 154px;
+    width: 19px;
+  }
+  .line2 {
+    background-color: rgb(242, 237, 238);
+    bottom: 84px;
+    height: 1px;
+    left: 46px;
+    position: absolute;
+    right: 0px;
+    top: 161px;
+    width: auto;
+  }
+  .info11_box {
+    bottom: 26px;
+    display: flex;
+    height: 18px;
+    justify-content: center;
+    left: 4.5px;
+    position: absolute;
+    right: 281.5px;
+    top: 202px;
+    width: 23px;
+  }
+  .info11 {
+    color: rgb(0, 0, 0);
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    text-align: center;
+  }
+  .info11_span0 {
+    color: rgb(255, 255, 255);
+    font: 1em/1.5 "Poppins", Helvetica, Arial, serif;
+  }
+  .info11_span1 {
+    color: rgb(151, 150, 153);
+    font: 1em/1.5 "Poppins", Helvetica, Arial, serif;
+  }
+  .line3 {
+    background-color: rgb(242, 237, 238);
+    bottom: 36px;
+    height: 1px;
+    left: 46px;
+    position: absolute;
+    right: 0px;
+    top: 209px;
+    width: auto;
+  }
+  .info3 {
+    bottom: 0px;
+    color: rgb(151, 150, 153);
+    display: flex;
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    height: 18px;
+    justify-content: center;
+    left: 62px;
+    position: absolute;
+    right: 236px;
+    text-align: center;
+    top: 228px;
+    width: 11px;
+  }
+  .info4 {
+    bottom: 0px;
+    color: rgb(151, 150, 153);
+    display: flex;
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    height: 18px;
+    justify-content: center;
+    left: 107px;
+    position: absolute;
+    right: 195px;
+    text-align: center;
+    top: 228px;
+    width: 7px;
+  }
+  .info5 {
+    bottom: 0px;
+    color: rgb(151, 150, 153);
+    display: flex;
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    height: 18px;
+    justify-content: center;
+    left: 147px;
+    position: absolute;
+    right: 150px;
+    text-align: center;
+    top: 228px;
+    width: 12px;
+  }
+  .info6 {
+    bottom: 0px;
+    color: rgb(151, 150, 153);
+    display: flex;
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    height: 18px;
+    justify-content: center;
+    left: 192px;
+    position: absolute;
+    right: 102px;
+    text-align: center;
+    top: 228px;
+    width: 15px;
+  }
+  .info7 {
+    bottom: 0px;
+    color: rgb(151, 150, 153);
+    display: flex;
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    height: 18px;
+    justify-content: center;
+    left: 241px;
+    position: absolute;
+    right: 61px;
+    text-align: center;
+    top: 228px;
+    width: 7px;
+  }
+  .info8 {
+    bottom: 0px;
+    color: rgb(151, 150, 153);
+    display: flex;
+    font: 400 12px/1.5 "Poppins", Helvetica, Arial, serif;
+    height: 18px;
+    justify-content: center;
+    left: 281px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    top: 228px;
+    width: 8px;
+  }
+  .image1 {
+    border-radius: 7.5px 7.5px 0px 0px;
+    bottom: 37px;
+    height: 95px;
+    left: 60px;
+    position: absolute;
+    right: 234px;
+    top: 114px;
+    width: 15px;
+  }
+  .image2 {
+    border-radius: 7.5px 7.5px 0px 0px;
+    bottom: 37px;
+    height: 143px;
+    left: 103px;
+    position: absolute;
+    right: 191px;
+    top: 66px;
+    width: 15px;
+  }
+  .image3 {
+    border-radius: 7.5px 7.5px 0px 0px;
+    bottom: 37px;
+    height: 76px;
+    left: 146px;
+    position: absolute;
+    right: 148px;
+    top: 133px;
+    width: 15px;
+  }
+  .image4 {
+    border-radius: 7.5px 7.5px 0px 0px;
+    bottom: 37px;
+    height: 113px;
+    left: 192px;
+    position: absolute;
+    right: 102px;
+    top: 96px;
+    width: 15px;
+  }
+  .image5 {
+    border-radius: 7.5px 7.5px 0px 0px;
+    bottom: 37px;
+    height: 126px;
+    left: 237px;
+    position: absolute;
+    right: 57px;
+    top: 83px;
+    width: 15px;
+  }
+  .image6 {
+    border-radius: 7.5px 7.5px 0px 0px;
+    bottom: 37px;
+    height: 33px;
+    left: 278px;
+    position: absolute;
+    right: 16px;
+    top: 176px;
+    width: 15px;
+  }
+  .highlight {
+    color: rgb(35, 0, 91);
+    font: 500 17px/1.52 "Poppins", Helvetica, Arial, serif;
+    height: 26px;
+    left: 0px;
+    position: absolute;
+    top: 5px;
+    width: 130px;
+  }
+  .box1 {
+    border-radius: 2px 2px 2px 2px;
+    display: flex;
+    flex-direction: column;
+    height: 36px;
+    outline: 1px solid rgba(151, 150, 153, 0.239);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 97px;
+  }
+  .flex_row {
+    align-items: center;
+    display: flex;
+    gap: 0px 9px;
+    margin: 8px;
+  }
+  .text {
+    color: rgb(151, 150, 153);
+    font: 500 13px/1.53 "Poppins", Helvetica, Arial, serif;
+  }
+  .image7 {
+    height: 6px;
+    width: 7px;
+  }
+}
