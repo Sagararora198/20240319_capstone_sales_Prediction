@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 //internal dependencies
 import { emailValidationMessage, userNameValidationMessage } from "../dependencies/constants/userConstants.js";
 
-
+import { usernameValidator,emailValidator } from "../dependencies/validations/userValidations.js";
 
 const userSchema = new mongoose.Schema({
     userName:{

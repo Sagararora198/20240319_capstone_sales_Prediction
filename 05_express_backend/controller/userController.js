@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 //internal dependencies
 import Users from '../models/user.js'
+import Sales from '../models/sales.js'
 import 'dotenv/config'
 import validateUser,{validateEmail,validatePassword,validateUserId} from '../dependencies/validators/userValidator.js'
 import { Router } from 'express'
@@ -98,25 +99,48 @@ const login = async(req,res)=>{
 
 const getUserById = async(req,res)=>{
     try {
-        const { userId } = req.query;
+        const {user} = req
     
         // Validate userId existence
-        validateUserId(userId);
+        validateUserId(user._id);
     
         // Find the user in the database using the provided userId
-        const user = await Users.findOne({ _id: userId });
+        const fetchedUser = await Users.findOne({ _id: user._id });
     
         // Check if the user exists
-        if (!user) {
+        if (!fetchedUser) {
           return res.status(404).json({ message: "User not found" });
         }
     
         // Respond with the user details
-        res.status(200).json(user);
+        res.status(200).json(fetchedUser);
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal Server Error" });
+      }
+    };
+const getSavedCsv = async(req,res)=>{
+    try {
+        const {user} = req
+    
+        // Validate userId existence
+        validateUserId(user._id);
+    
+        // Find the user in the database using the provided userId
+        const fetchedFiles = await Sales.find({ uploadedBy: user._id });
+    
+        // Check if the user exists
+        if (!fetchedFiles) {
+          return res.status(404).json({ message: "User not found" });
+        }
+    
+        // Respond with the user details
+        res.status(200).json(fetchedFiles);
       } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Internal Server Error" });
       }
     };
 
-export {register,login}
+
+export {register,login,getUserById,getSavedCsv}
