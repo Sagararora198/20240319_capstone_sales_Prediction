@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
 //internal dependencies
 import Users from '../models/user.js'
 import 'dotenv/config'
-import validateUser,{validateEmail,validatePassword} from '../dependencies/validators/userValidator.js'
+import validateUser,{validateEmail,validatePassword,validateUserId} from '../dependencies/validators/userValidator.js'
 import { Router } from 'express'
 
 const register = async(req,res)=>{
@@ -95,5 +95,28 @@ const login = async(req,res)=>{
         res.status(500).json({ error: "Internal Server Error" });
       }
 }
+
+const getUserById = async(req,res)=>{
+    try {
+        const { userId } = req.query;
+    
+        // Validate userId existence
+        validateUserId(userId);
+    
+        // Find the user in the database using the provided userId
+        const user = await Users.findOne({ _id: userId });
+    
+        // Check if the user exists
+        if (!user) {
+          return res.status(404).json({ message: "User not found" });
+        }
+    
+        // Respond with the user details
+        res.status(200).json(user);
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal Server Error" });
+      }
+    };
 
 export {register,login}

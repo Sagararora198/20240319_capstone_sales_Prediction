@@ -30,10 +30,15 @@ const validateUserName = (userName) => {
       throw new Error("Password must be between 8 and 50 characters long.");
     }
   };
+  const validateUserId = (userId) => {
+    if (!userId || typeof userId !== "string") {
+      throw new Error("userId must be a non-empty string");
+    }
+  };
   const validateUser = (userData) => {
     validateUserName(userData.userName);
     validateEmail(userData.email);
     validatePassword(userData.password)
   };
-  export {validateUserName,validateEmail,validatePassword}
+  export {validateUserName,validateEmail,validatePassword,validateUserId}
   export default validateUser

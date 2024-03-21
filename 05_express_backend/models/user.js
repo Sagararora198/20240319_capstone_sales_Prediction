@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 //internal dependencies
 import { emailValidationMessage, userNameValidationMessage } from "../dependencies/constants/userConstants.js";
-import { emailValidator,usernameValidator } from "../dependencies/validations/userValidations.js";
 
 
 

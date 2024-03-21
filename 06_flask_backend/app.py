@@ -28,7 +28,6 @@ db=mongoDB['sales_prediction']
 
 
 app=Flask(__name__)
-# app.secret_key='SECRET_KEY'
 CORS(app)
 
 
