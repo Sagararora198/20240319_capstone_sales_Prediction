@@ -8,7 +8,7 @@ import Sales from '../models/sales.js'
 import UserToken from '../models/userToken.js'
 import 'dotenv/config'
 import validateUser,{validateEmail,validatePassword,validateUserId} from '../dependencies/validators/userValidator.js'
-import { Router } from 'express'
+
 
 const register = async(req,res)=>{
     try{
