@@ -1,5 +1,6 @@
 // external dependencies
-
+import fs from 'fs'
+import csv from 'csv-parser'
 // internal dependencies
 import { rejects } from 'assert';
 import requireLogin from '../middleware/requireLogin.js'
@@ -71,4 +72,30 @@ const postSalesData =async(req,res)=>{
      
 
 // }
-export {postSalesData}
+
+const getcsvData = async(req,res)=>{
+    try{
+        const {title} = req.query
+        const {user} = req
+        const savedFile = await Sales.findOne({fileTitle:title,uploadedBy:user._id})
+        if(!savedFile){
+            return res.status(404).json({ message: "You do not have any file with this name" });  
+        }
+        const path = savedFile.filePath
+        const results = []
+        fs.createReadStream(path)
+        .pipe(csv())
+        .on('data', (data) => results.push(data))
+        .on('end', () => {
+      // Send the results array as JSON
+        res.status(200).json(results);
+    });
+
+
+    }
+    catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
+export {postSalesData,getcsvData}

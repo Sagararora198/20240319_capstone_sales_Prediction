@@ -77,10 +77,21 @@ def getPrediction():
         future_dates = [df.index[-1] + date_offset * x for x in range(1, future_periods + 1)]
         forecast_df = pd.DataFrame(forecast.values, index=future_dates, columns=['PredictedSales'])
         # Convert the forecast DataFrame to a JSON-friendly format
-        forecast_json = forecast_df.to_json(date_format='iso', orient='split')
+        
+        forecast_list = [
+        {"date": date.strftime('%Y-%m-%d'), "PredictedSales": value}
+        for date, value in zip(forecast_df.index, forecast_df['PredictedSales'])
+        ]
+
+        # Convert the list of dictionaries to JSON
+        forecast_json = json.dumps(forecast_list)
 
         # Return the JSON data
-        return jsonify(forecast_json)  
+        return jsonify(forecast_json)
+        # forecast_json = forecast_df.to_json(date_format='iso', orient='split')
+
+        # # Return the JSON data
+        # return jsonify(forecast_json)  
     # from pandas.tseries.offsets import DateOffset
     # future_dates=[df.index[-1]+ DateOffset(months=x)for x in range(0,24)]
     # future_datest_df=pd.DataFrame(index=future_dates[1:],columns=df.columns)

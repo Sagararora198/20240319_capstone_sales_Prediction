@@ -1,9 +1,10 @@
 // external dependencies
  import express from 'express'
 //internal dependencies
-import { postSalesData } from '../controller/saleController.js'
+import { postSalesData,getcsvData } from '../controller/saleController.js'
 import requireLogin from '../middleware/requireLogin.js'
 import multer from "multer"
+
 
 const router = express.Router()
 const storage = multer.diskStorage({
@@ -19,4 +20,5 @@ const upload =multer({storage:storage})
 router.post('/upload',requireLogin,upload.single('file'),postSalesData)
 
 // router.get('/prediction',requireLogin,getprediction)
+router.get('/myfile',requireLogin,getcsvData)
 export {router as postRouter}
