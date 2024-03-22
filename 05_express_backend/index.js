@@ -13,21 +13,21 @@ const app = express()
 app.use(json())
 app.use(express.urlencoded({extended:false}))
 
-
-
-
 // routes
 app.use('/user',userRouter)
 app.use('/sale',postRouter)
-
 
 //connection and server
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("connected");
-        app.listen(process.env.PORT, () => {
+        const server = app.listen(process.env.PORT, () => {
             console.log("Listining on " + process.env.PORT);
          })
+         server.on('error',(error)=>{
+            console.error('Failed to start the server:', err);
+         })
+        
     })
     .catch(err=>{
         console.log("cannot connect to mongo");

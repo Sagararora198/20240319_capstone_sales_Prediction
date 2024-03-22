@@ -1,0 +1,13 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    height: 478px;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 2133px;
+  }
+  .options{
+    display: flex;
+    
+  }
