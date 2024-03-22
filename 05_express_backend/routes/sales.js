@@ -25,4 +25,5 @@ router.post('/upload',requireLogin,upload.single('file'),postSalesData)
 
 //route to getcsvData
 router.get('/myfile',requireLogin,getcsvData)
+
 export {router as postRouter}
