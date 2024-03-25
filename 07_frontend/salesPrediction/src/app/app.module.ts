@@ -8,17 +8,27 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './material/material.module';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { LoginComponent } from './layout/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './layout/signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomepageComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    
+    
 
 
 

@@ -14,13 +14,9 @@ import pymongo
 from pylab import rcParams
 import statsmodels.api as sm
 from dateutil import parser
-# from sklearn.metrics import mean_squared_error
-# from math import sqrt
-# from sklearn import metrics
-# from passlib.hash import  pbkdf2_sha256
-# import warnings
+
 from statsmodels.tools.sm_exceptions import ConvergenceWarning
-# warnings.simplefilter('ignore', ConvergenceWarning)
+
 
 
 mongoDB=pymongo.MongoClient('mongodb+srv://root:root@cluster0.rebho1q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
@@ -79,7 +75,7 @@ def getPrediction():
         # Convert the forecast DataFrame to a JSON-friendly format
         
         forecast_list = [
-        {"date": date.strftime('%Y-%m-%d'), "PredictedSales": value}
+            {"date": date.strftime('%Y-%m-%d'), "PredictedSales": value}
         for date, value in zip(forecast_df.index, forecast_df['PredictedSales'])
         ]
 

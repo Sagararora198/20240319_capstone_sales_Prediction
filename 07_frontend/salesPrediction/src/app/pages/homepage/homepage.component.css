@@ -1,0 +1,41 @@
+.decorator{
+    z-index: 0;
+    width: 100%;
+    
+  }
+.bodycomponent{
+    position: absolute;
+    top: 268px;
+    left: 287px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 11em;
+    z-index: 1; 
+}
+.hero_title{
+    font-size: 100px;
+    font-weight: 500;
+
+}
+.image2{
+    width: 30em;
+    height: 19em;
+
+
+}
+.images{
+    position: absolute;
+    top: 379px;
+    left: 393px;
+    z-index: 0;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img.image {
+    margin-right: 34px;
+    height: 19em;
+}

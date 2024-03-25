@@ -3,11 +3,20 @@
     flex-direction: row;
     height: 478px;
     left: 0px;
-    position: absolute;
+    position: fixed;
     top: 0px;
-    width: 2133px;
+    width: 99vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   .options{
     display: flex;
+    justify-content: space-around;
     
+
   }
+
+.logo{
+  font-size:x-large;
+}
+
