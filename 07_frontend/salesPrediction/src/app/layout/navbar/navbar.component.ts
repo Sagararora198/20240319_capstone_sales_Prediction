@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
     
   }
   predict(){
-    console.log("working predict");
+    this.router.navigate(['/upload-data'])
     
   }
 }

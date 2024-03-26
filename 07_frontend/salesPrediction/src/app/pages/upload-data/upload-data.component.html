@@ -1,1 +1,34 @@
-<h1>upload data works</h1>
+<app-navbar [backgroundColor]="navBackground"></app-navbar>
+<div class="form-container">
+    <!-- <form #uploadForm="ngForm" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" ngModel required>
+      </div>
+      <div class="form-group drop-zone" (drop)="onFileDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+        <label for="fileUpload">Upload File:</label>
+        <input type="file" id="fileUpload" name="fileUpload" ngModel (change)="onFileSelect($event)" hidden>
+        <p *ngIf="!file">Drag and drop a file here or click to select a file</p>
+        <p *ngIf="file">{{file.name}}</p>
+      </div>
+      <button type="submit" [disabled]="!uploadForm.valid">Submit</button>
+    </form> -->
+
+    <div class="form-group drop-zone" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)"
+        (drop)="onDrop($event)" (click)="fileInput.click()">
+
+        <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)" />
+        <p>Drag & drop files here or click to select manually</p>
+    </div>
+    <div *ngIf="selectedFile" class="selectedFile">
+        <p> File: {{ selectedFile.name }}</p>
+        
+    </div>

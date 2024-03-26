@@ -1,0 +1,61 @@
+.form-container {
+    max-width: 500px;
+    
+    margin: auto;
+    padding: 20px;
+    margin-top: 80px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[disabled] {
+    background-color: #ccc;
+  }
+  .drop-zone {
+    margin: auto;
+    border: 2px dashed #007bff;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.selectedFile{
+    margin-left: 72px;
+    margin-top: 20px;
+}
+.selectedFile >p{
+    font-weight: 300;
+    font-weight: 500;
+    font-size: larger;
+}
