@@ -1,13 +1,14 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    height: 478px;
+    height: 3em;
     left: 0px;
     position: fixed;
     top: 0px;
-    width: 99vw;
+    width: 100vw;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: none;
   }
   .options{
     display: flex;
@@ -20,3 +21,6 @@
   font-size:x-large;
 }
 
+.userOption{
+  margin-right: 14px;
+}

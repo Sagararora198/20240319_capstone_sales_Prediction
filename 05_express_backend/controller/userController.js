@@ -100,6 +100,7 @@ const register = async (req, res) => {
  */
 const login = async (req, res) => {
   const { email, password } = req.body;
+  // console.log(email,password);
 
   // Validation
   try {
@@ -115,7 +116,7 @@ const login = async (req, res) => {
     user = await Users.findOne({ email });
   }
   catch (err) {
-    findErrors(err, res)
+    // findErrors(err, res)
   }
   if (!user) {
     return res.status(401).json({
@@ -129,7 +130,7 @@ const login = async (req, res) => {
 
   }
   catch (err) {
-    compareError(err, res)
+    // compareError(err, res)
   }
   // Compare password
   if (!isPasswordValid) {
@@ -138,15 +139,16 @@ const login = async (req, res) => {
     });
   }
   // Generate JWT token
+  let token
   try {
-    const token = jwt.sign(
+     token = jwt.sign(
       { email: user.email, _id: user._id },
       process.env.SECRET_KEY,
       { expiresIn: "1h" } // Token expires in 1 hour
     );
   }
   catch (err) {
-    signErrors(err, res)
+    // signErrors(err, res)
   }
 
   res.status(200).json({

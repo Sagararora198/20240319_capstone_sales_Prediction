@@ -2,6 +2,7 @@
 import express, { json } from "express"
 import 'dotenv/config'
 import mongoose from "mongoose"
+import cors from 'cors'
 
 //internal dependencies
 import {router as userRouter} from "./routes/user.js"
@@ -12,6 +13,7 @@ const app = express()
 //middlewares
 app.use(json())
 app.use(express.urlencoded({extended:false}))
+app.use(cors())
 
 // routes
 app.use('/user',userRouter)

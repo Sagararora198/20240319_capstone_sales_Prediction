@@ -36,19 +36,8 @@
           </div>
         </div>
   
-        <!-- Full Name input field -->
-        <div class="input-container">
-          <input type="text" placeholder="Full Name" [(ngModel)]="fullName" name="fullName"
-                 #fullNameInput="ngModel" minlength="3" maxlength="50" required
-                 (blur)="fullNameInputFocused = false" (focus)="fullNameInputFocused = true" />
-          <!-- Error messages for Full Name -->
-          <div *ngIf="!fullNameInputFocused && fullNameInput.invalid && (fullNameInput.dirty || fullNameInput.touched)"
-               class="error-message">
-              <div *ngIf="fullNameInput.errors?.['required']">Full Name is required</div>
-              <div *ngIf="fullNameInput.errors?.['minlength']">Full Name must be at least 3 characters</div>
-              <div *ngIf="fullNameInput.errors?.['maxlength']">Full Name cannot exceed 50 characters</div>
-          </div>
-        </div>
+        
+
   
         <!-- Email input field -->
         <div class="input-container">
@@ -64,17 +53,7 @@
         </div>
   
         <!-- Phone Number input field -->
-        <div class="input-container">
-          <input type="tel" placeholder="Phone Number" [(ngModel)]="phoneNumber" name="phoneNumber"
-                 #phoneNumberInput="ngModel" required pattern="[0-9]{10}"
-                 (blur)="phoneNumberInputFocused = false" (focus)="phoneNumberInputFocused = true" />
-          <!-- Error messages for Phone Number -->
-          <div *ngIf="!phoneNumberInputFocused && phoneNumberInput.invalid && (phoneNumberInput.dirty || phoneNumberInput.touched)"
-               class="error-message">
-              <div *ngIf="phoneNumberInput.errors?.['required']">Phone Number is required</div>
-              <div *ngIf="phoneNumberInput.errors?.['pattern']">Invalid phone number format (should be 10 digits)</div>
-          </div>
-        </div>
+
   
         <!-- Password input field -->
         <div class="input-container">
@@ -90,7 +69,7 @@
         </div>
   
         <!-- Continue button -->
-        <button class="continue-button" [disabled]="!fullNameInput.valid || !emailInput.valid || !phoneNumberInput.valid || !passwordInput.valid" [ngClass]="{'disabled-button': !fullNameInput.valid || !emailInput.valid || !phoneNumberInput.valid || !passwordInput.valid}" (click)="onContinueClick()">Continue</button>
+        <button class="continue-button" [disabled]="  !emailInput.valid ||  !passwordInput.valid" [ngClass]="{'disabled-button':  !emailInput.valid || !passwordInput.valid}" (click)="onContinueClick()">Continue</button>
   
         <!-- Already a user section with login button -->
         <div class="already-user">

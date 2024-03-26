@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
+import { SignupService } from '../../services/signup.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { LoginComponent } from '../login/login.component';
   styleUrl: './signup.component.css'
 })
 export class SignupComponent {
-  constructor(public dialog:MatDialog,public dialogRef:MatDialogRef<SignupComponent>){}
+  constructor(public dialog:MatDialog,public dialogRef:MatDialogRef<SignupComponent>,private singupservice:SignupService){}
     // Method to close the signup popup
     closePopup(): void {
       this.dialogRef.close();
@@ -42,6 +43,22 @@ export class SignupComponent {
   onContinueClick(): void {
 
     console.log("working");
+    const userData = {
+      userName:this.username,
+      email:this.email,
+      password:this.password
+
+    }
+    this.singupservice.signup(userData).subscribe({
+      next:(response:any)=>{
+        console.log(response);
+        this.showLoginPopup()
+        
+      },
+      error:(err)=>{
+        alert(err.message)
+      }
+    })
     
   }
 }

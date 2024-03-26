@@ -12,6 +12,9 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginComponent } from './layout/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './layout/signup/signup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ForgotPasswodComponent } from './pages/forgot-passwod/forgot-passwod.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { SignupComponent } from './layout/signup/signup.component';
     NavbarComponent,
     HomepageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ForgotPasswodComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -27,6 +32,7 @@ import { SignupComponent } from './layout/signup/signup.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    HttpClientModule
     
     
 

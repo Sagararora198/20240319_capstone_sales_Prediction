@@ -13,7 +13,7 @@ function findErrors(err, res) {
     // Handle CastError
   } else if (err.name === 'ValidationError') {
     console.error('ValidationError occurred:', err.message);
-    return res.status(400).json({ error: err.message });
+     res.status(400).json({ error: err.message });
     // Handle ValidationError
   } else if (err.name === 'MongoNetworkError') {
     console.error('Network error occurred:', err.message);
