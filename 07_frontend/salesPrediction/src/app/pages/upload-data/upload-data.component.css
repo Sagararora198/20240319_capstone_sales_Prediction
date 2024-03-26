@@ -1,10 +1,14 @@
 .form-container {
-    max-width: 500px;
+    /* max-width: 500px; */
+    width: 80vw;
+    height: 80vh;
     
     margin: auto;
     padding: 20px;
     margin-top: 80px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
   }
   
   .form-group {
@@ -16,14 +20,7 @@
     margin-bottom: 5px;
   }
   
-  .form-group input[type="text"],
-  .form-group input[type="email"],
-  .form-group input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+
   
   button {
     padding: 10px 20px;
@@ -59,3 +56,37 @@
     font-weight: 500;
     font-size: larger;
 }
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Ensure spacing between fields */
+  }
+  
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  /* You might want to add focus styles for accessibility */
+  .form-group input[type="text"]:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  .inputfields{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+  }
+  .inputfields >div{
+    flex: 0 0 calc(50% - 10px); /* Adjust width of items to create space between them */
+    margin: 5px; /* Add some margin between items */
+  }

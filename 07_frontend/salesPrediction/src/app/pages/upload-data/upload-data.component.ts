@@ -10,6 +10,10 @@ export class UploadDataComponent {
 
   navBackground:string = '#211E1E'
   selectedFile: File | null = null;
+  fileTitle:string=''
+  periodicity:string=''
+  predictColumn:string=''
+  dateColumn:string=''
 
   onDragOver(event: DragEvent) {
     event.preventDefault();

@@ -27,8 +27,34 @@
 
         <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)" />
         <p>Drag & drop files here or click to select manually</p>
+        <div *ngIf="selectedFile" class="selectedFile">
+            <p> File: {{ selectedFile.name }}</p>
+            
+        </div>
     </div>
-    <div *ngIf="selectedFile" class="selectedFile">
-        <p> File: {{ selectedFile.name }}</p>
-        
+    <div class="inputfields">
+
+   
+    <div class="form-group">
+        <input type="text" [(ngModel)]="fileTitle" required placeholder="File Title">
+      </div>
+      <div class="form-group">
+        <select [(ngModel)]="periodicity" required>
+          <option value="" disabled selected>periodicity</option>
+          <option value="option1">Monthly</option>
+          <option value="option2">Yearly</option>
+          <option value="option3">Weekly</option>
+          <option value="option3">Daily</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="predictColumn" required placeholder="Predict Column">
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="dateColumn" required placeholder="Date Column">
+      </div>
     </div>
+    <button type="submit" >Submit</button>
+
+</div>
