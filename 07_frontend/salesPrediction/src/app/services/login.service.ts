@@ -6,7 +6,9 @@ import { BehaviorSubject } from "rxjs";
     providedIn:'root'
 })
 export class LoginService {
-    constructor(private http:HttpClient){}
+    constructor(private http:HttpClient){
+        this.checkloginStatus()
+    }
     login(userdata:{email:String,password:String}){
        return this.http.post(`http://localhost:3000/user/login`,userdata)
     }
@@ -20,6 +22,15 @@ export class LoginService {
         this.loggedIn.next(true)
         
 
+    }
+    private checkloginStatus(){
+        const token = localStorage.getItem('Token');
+        // If token exists, user is considered logged in
+        if (token) {
+            this.loggedIn.next(true);
+        } else {
+            this.loggedIn.next(false);
+        }
     }
     setLogout(){
         this.loggedIn.next(false)

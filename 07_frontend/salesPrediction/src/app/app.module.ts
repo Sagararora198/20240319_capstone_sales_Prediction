@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './layout/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotPasswodComponent } from './pages/forgot-passwod/forgot-passwod.component';
+import { UploadDataComponent } from './pages/upload-data/upload-data.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ForgotPasswodComponent } from './pages/forgot-passwod/forgot-passwod.co
     LoginComponent,
     SignupComponent,
     ForgotPasswodComponent,
+    UploadDataComponent,
     
   ],
   imports: [
