@@ -1,60 +1,42 @@
 <app-navbar [backgroundColor]="navBackground"></app-navbar>
 <div class="form-container">
-    <!-- <form #uploadForm="ngForm" enctype="multipart/form-data">
-      <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" ngModel required>
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" ngModel required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" ngModel required>
-      </div>
-      <div class="form-group drop-zone" (drop)="onFileDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
-        <label for="fileUpload">Upload File:</label>
-        <input type="file" id="fileUpload" name="fileUpload" ngModel (change)="onFileSelect($event)" hidden>
-        <p *ngIf="!file">Drag and drop a file here or click to select a file</p>
-        <p *ngIf="file">{{file.name}}</p>
-      </div>
-      <button type="submit" [disabled]="!uploadForm.valid">Submit</button>
-    </form> -->
+    <form  (submit)="handleSubmit()">
 
     <div class="form-group drop-zone" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)"
         (drop)="onDrop($event)" (click)="fileInput.click()">
 
         <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)" />
         <p>Drag & drop files here or click to select manually</p>
-        <div *ngIf="selectedFile" class="selectedFile">
-            <p> File: {{ selectedFile.name }}</p>
-            
-        </div>
+    </div>
+    <div *ngIf="file" class="selectedFile">
+        <p> File: {{ file.name }}</p>
+        
     </div>
     <div class="inputfields">
 
    
     <div class="form-group">
-        <input type="text" [(ngModel)]="fileTitle" required placeholder="File Title">
+        <input type="text" [(ngModel)]="fileTitle" name="title"  placeholder="File Title">
       </div>
       <div class="form-group">
-        <select [(ngModel)]="periodicity" required>
+        
+        <select [(ngModel)]="periodicity" name="periodicity" >
           <option value="" disabled selected>periodicity</option>
-          <option value="option1">Monthly</option>
-          <option value="option2">Yearly</option>
-          <option value="option3">Weekly</option>
-          <option value="option3">Daily</option>
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+          <option value="weekly">Weekly</option>
+          <option value="daily">Daily</option>
           <!-- Add more options as needed -->
         </select>
       </div>
       <div class="form-group">
-        <input type="text" [(ngModel)]="predictColumn" required placeholder="Predict Column">
+        <input type="text" [(ngModel)]="predictColumn" name="predictColumn" required placeholder="Predict Column" >
       </div>
       <div class="form-group">
-        <input type="text" [(ngModel)]="dateColumn" required placeholder="Date Column">
+        <input type="text" [(ngModel)]="dateColumn" name="dateColumn" required placeholder="Date Column">
       </div>
     </div>
-    <button type="submit" >Submit</button>
+    <button type="submit"  >Submit</button>
+</form>
 
 </div>

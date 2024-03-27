@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ForgotPasswordService } from '../../services/forgot-password.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-passwod',
@@ -11,12 +13,25 @@ export class ForgotPasswodComponent {
   
   // String variable to store the user's email
   email: string = '';
-  constructor() {}
+  constructor(private forgotpassword:ForgotPasswordService,private router:Router) {}
 
   //when button it clicked 
   forgetPassword(): void {
 
-    console.log("forgot");
+    const userData = {
+      email:this.email
+    }
+    this.forgotpassword.forgotPassword(userData).subscribe({
+      next:(response:any)=>{
+        console.log(response)
+        alert("Password reset instructions sent")
+        
+      },
+      error:(err)=>{
+        console.log(err);
+        
+      }
+    })
     
   }
 }

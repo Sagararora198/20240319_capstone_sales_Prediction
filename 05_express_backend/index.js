@@ -11,9 +11,9 @@ import { postRouter } from "./routes/sales.js"
 const app = express()
 
 //middlewares
-app.use(json())
-app.use(express.urlencoded({extended:false}))
 app.use(cors())
+app.use(express.urlencoded({extended:false}))
+app.use(json())
 
 // routes
 app.use('/user',userRouter)

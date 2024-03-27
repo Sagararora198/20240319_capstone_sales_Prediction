@@ -15,6 +15,8 @@ import { SignupComponent } from './layout/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotPasswodComponent } from './pages/forgot-passwod/forgot-passwod.component';
 import { UploadDataComponent } from './pages/upload-data/upload-data.component';
+import { PredictonsComponent } from './pages/predictons/predictons.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { UploadDataComponent } from './pages/upload-data/upload-data.component';
     SignupComponent,
     ForgotPasswodComponent,
     UploadDataComponent,
+    PredictonsComponent,
+    ResetPasswordComponent,
     
   ],
   imports: [

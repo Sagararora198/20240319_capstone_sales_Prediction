@@ -34,9 +34,10 @@ import { spawn } from 'child_process'
  * It ensures that each uploaded file has a unique title to prevent duplicates in the system.
  */
 const postSalesData = async (req, res) => {
+    
     console.log(req.file);
     const { fileTitle, periodicity, predictColumn, dateColumn } = req.body
-    // console.log(req.body);
+    console.log(req.body);
     const { path, mimetype } = req.file
     const { user } = req
     // console.log(user);
