@@ -19,6 +19,7 @@ import { PredictonsComponent } from './pages/predictons/predictons.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { LoaderComponent } from './layout/loader/loader.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { LoaderComponent } from './layout/loader/loader.component';
     ResetPasswordComponent,
     PageNotFoundComponent,
     LoaderComponent,
+    AboutComponent,
     
   ],
   imports: [

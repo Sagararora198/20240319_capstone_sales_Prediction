@@ -4,7 +4,7 @@
     <button mat-button class="logo">Logo</button>
     <div class="options navigationOption">
         <button mat-button class="optionText" routerLink="/" >Home</button>
-        <button mat-button class="optionText">About</button>
+        <button mat-button class="optionText" routerLink="/about">About</button>
         @if (loggedIn) {
             <button mat-button class="optionText" (click)="predict()">Predict</button>
 
