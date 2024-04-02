@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     height: 11em;
+    margin-right: 168px;    
     z-index: 1; 
 }
 /* .hero_title{

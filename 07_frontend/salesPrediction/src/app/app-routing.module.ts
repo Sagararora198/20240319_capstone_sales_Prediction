@@ -5,14 +5,24 @@ import { ForgotPasswodComponent } from './pages/forgot-passwod/forgot-passwod.co
 import { UploadDataComponent } from './pages/upload-data/upload-data.component';
 import { PredictonsComponent } from './pages/predictons/predictons.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
-
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
-  {path:'',component:HomepageComponent},
-  {path:'forgot-password',component:ForgotPasswodComponent},
-  {path:'upload-data',component:UploadDataComponent},
-  {path:'prediction',component:PredictonsComponent},
-  {path:'reset-password',component:ResetPasswordComponent},
+  { path: '', component: HomepageComponent },
+  { path: 'forgot-password', component: ForgotPasswodComponent },
+  {
+    path: 'upload-data',
+    canActivate: [AuthGuardService],
+    component: UploadDataComponent
+  },
+  {
+    path: 'prediction',
+    canActivate: [AuthGuardService],
+    component: PredictonsComponent
+  },
+  { path: 'reset-password/:token', component: ResetPasswordComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
