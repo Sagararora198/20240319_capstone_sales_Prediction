@@ -33,6 +33,7 @@ export class NavbarComponent implements OnInit {
   }
   profile(){
     console.log("working");
+    this.router.navigate(['/profile'])
     
   }
   predict(){

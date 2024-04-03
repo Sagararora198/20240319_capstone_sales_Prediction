@@ -8,6 +8,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AboutComponent } from './pages/about/about.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -23,9 +24,14 @@ const routes: Routes = [
     component: PredictonsComponent
   },
   { path: 'reset-password/:token', component: ResetPasswordComponent },
-  {path:'about',component:AboutComponent},
+  { path: 'about', component: AboutComponent },
+  {
+    path: 'profile',
+    canActivate: [AuthGuardService],
+    component: ProfileComponent
+  },
   { path: '**', component: PageNotFoundComponent },
-  
+
 ];
 
 @NgModule({

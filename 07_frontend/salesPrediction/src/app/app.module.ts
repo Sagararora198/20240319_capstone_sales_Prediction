@@ -20,6 +20,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { LoaderComponent } from './layout/loader/loader.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { AboutComponent } from './pages/about/about.component';
     PageNotFoundComponent,
     LoaderComponent,
     AboutComponent,
+    ProfileComponent,
     
   ],
   imports: [
